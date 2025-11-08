@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi tiết sản phẩm | DrinkShop</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">DrinkShop</div>
+    <nav class="nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="products.html">Sản phẩm</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="account.html">Tài khoản</a>
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+  </header>
+
+  <!-- Chi tiết sản phẩm -->
+  <section class="product-detail">
+    <div class="product-image">
+      <img id="main-img" src="assets/images/product1.jpg" alt="Cà phê sữa đá" />
+      <div class="thumbs">
+        <img src="assets/images/product1.jpg" alt="ảnh 1" class="thumb active" />
+        <img src="assets/images/product1b.jpg" alt="ảnh 2" class="thumb" />
+        <img src="assets/images/product1c.jpg" alt="ảnh 3" class="thumb" />
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h1>Cà phê sữa đá</h1>
+      <p class="price">25.000đ</p>
+
+      <p class="short-desc">
+        Hương vị đậm đà, thơm ngậy, mang đến năng lượng và sự sảng khoái mỗi sáng.
+      </p>
+
+      <div class="options">
+        <label for="size">Kích cỡ:</label>
+        <select id="size">
+          <option>330ml</option>
+          <option>500ml</option>
+          <option>1L</option>
+        </select>
+
+        <label for="topping">Topping:</label>
+        <select id="topping">
+          <option>Không</option>
+          <option>Thạch cà phê</option>
+          <option>Trân châu trắng</option>
+          <option>Thêm sữa</option>
+        </select>
+
+        <label for="quantity">Số lượng:</label>
+        <input type="number" id="quantity" value="1" min="1" />
+      </div>
+
+      <button id="add-to-cart">🛒 Thêm vào giỏ</button>
+      <button id="buy-now" class="buy-now">Mua ngay</button>
+
+      <hr />
+      <h3>Thành phần dinh dưỡng:</h3>
+      <ul>
+        <li>Cà phê rang xay nguyên chất</li>
+        <li>Sữa đặc, đường, nước</li>
+        <li>Không chứa chất bảo quản</li>
+      </ul>
+
+      <h3>Cảnh báo dị ứng:</h3>
+      <p>Sản phẩm có chứa sữa – không phù hợp với người dị ứng lactose.</p>
+    </div>
+  </section>
+
+  <!-- Đánh giá -->
+  <section class="reviews">
+    <h2>Đánh giá của khách hàng</h2>
+    <div class="review-list">
+      <div class="review-item">
+        <p><strong>Nguyễn Minh:</strong> Cà phê ngon, giao nhanh!</p>
+      </div>
+      <div class="review-item">
+        <p><strong>Thu Trang:</strong> Hương vị đúng kiểu cà phê Việt, 10/10.</p>
+      </div>
+    </div>
+    <div class="review-form">
+      <textarea id="review-text" placeholder="Viết đánh giá của bạn..."></textarea>
+      <button id="submit-review">Gửi đánh giá</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 DrinkShop. All rights reserved.</p>
+    <p><a href="contact.html">Chính sách & Liên hệ</a></p>
+  </footer>
+
+  <script src="assets/js/detail.js"></script>
+</body>
+</html>

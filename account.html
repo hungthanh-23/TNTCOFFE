@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài khoản | DrinkShop</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">DrinkShop</div>
+    <nav class="nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="products.html">Sản phẩm</a>
+      <a href="cart.html">Giỏ hàng</a>
+      <a href="account.html" class="active">Tài khoản</a>
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+  </header>
+
+  <!-- Khu vực tài khoản -->
+  <section class="account">
+    <div id="auth-section">
+      <h2>Đăng nhập / Đăng ký</h2>
+      <div class="auth-box">
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Nhập email..." required>
+        <label>Mật khẩu:</label>
+        <input type="password" id="password" placeholder="Nhập mật khẩu..." required>
+        <button id="login-btn">Đăng nhập</button>
+        <button id="register-btn" class="btn-outline">Đăng ký</button>
+      </div>
+    </div>
+
+    <div id="profile-section" class="hidden">
+      <h2>Xin chào, <span id="user-email"></span></h2>
+      <p>Quản lý đơn hàng và thông tin của bạn tại đây.</p>
+
+      <div class="order-history">
+        <h3>Lịch sử đơn hàng</h3>
+        <table id="order-table">
+          <thead>
+            <tr>
+              <th>Mã đơn</th>
+              <th>Ngày đặt</th>
+              <th>Tổng tiền</th>
+              <th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- đơn hàng render từ JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <button id="logout-btn">Đăng xuất</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 DrinkShop. All rights reserved.</p>
+    <p><a href="contact.html">Chính sách & Liên hệ</a></p>
+  </footer>
+
+  <script src="assets/js/account.js"></script>
+</body>
+</html>

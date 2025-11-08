@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng | DrinkShop</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">DrinkShop</div>
+    <nav class="nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="products.html">Sản phẩm</a>
+      <a href="cart.html" class="active">Giỏ hàng</a>
+      <a href="account.html">Tài khoản</a>
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+  </header>
+
+  <!-- Giỏ hàng -->
+  <section class="cart">
+    <h2>🛒 Giỏ hàng của bạn</h2>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Tổng</th>
+          <th>Xóa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- sản phẩm render bằng JS -->
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <div class="coupon">
+        <label for="coupon">Mã giảm giá:</label>
+        <input type="text" id="coupon" placeholder="Nhập mã (ví dụ: DRINK10)">
+        <button id="apply-coupon">Áp dụng</button>
+      </div>
+
+      <div class="shipping">
+        <label for="shipping">Phương thức giao hàng:</label>
+        <select id="shipping">
+          <option value="0">Miễn phí (Nội thành)</option>
+          <option value="15000">Ngoại thành (+15.000đ)</option>
+          <option value="30000">Liên tỉnh (+30.000đ)</option>
+        </select>
+      </div>
+
+      <div class="payment">
+        <label>Phương thức thanh toán:</label>
+        <div class="payment-options">
+          <label><input type="radio" name="pay" value="card"> Thẻ VISA/Master</label>
+          <label><input type="radio" name="pay" value="vnpay"> VNPay/QR</label>
+          <label><input type="radio" name="pay" value="cod" checked> Thanh toán khi nhận hàng (COD)</label>
+        </div>
+      </div>
+
+      <div class="total">
+        <p>Tạm tính: <span id="subtotal">0đ</span></p>
+        <p>Phí ship: <span id="shipping-fee">0đ</span></p>
+        <p>Giảm giá: <span id="discount">0đ</span></p>
+        <h3>Tổng cộng: <span id="grandtotal">0đ</span></h3>
+      </div>
+
+      <button id="checkout">Xác nhận đơn hàng</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 DrinkShop. All rights reserved.</p>
+    <p><a href="contact.html">Chính sách & Liên hệ</a></p>
+  </footer>
+
+  <script src="assets/js/cart.js"></script>
+</body>
+</html>
