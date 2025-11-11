@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sản phẩm | DrinkShop</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm | TNT Coffee</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/products.css" />
 </head>
+
 <body>
-  <!-- Header -->
   <header class="header">
-    <div class="logo">DrinkShop</div>
+    <div class="logo">TNT Coffee</div>
     <nav class="nav">
       <a href="index.html">Trang chủ</a>
       <a href="products.html" class="active">Sản phẩm</a>
@@ -19,12 +20,118 @@
     </nav>
   </header>
 
-  <!-- Bộ lọc -->
-  <section class="filters">
-    <h2>Bộ lọc sản phẩm</h2>
-    <div class="filter-row">
-      <div>
-        <label for="type">Loại đồ uống:</label>
-        <select id="type">
-          <option value="all">Tất cả</option>
-          <option value="coffee
+  <section class="product-section">
+    <div class="filter-box">
+      <label for="category">Loại đồ uống:</label>
+      <select id="category">
+        <option value="all">Tất cả</option>
+        <option value="coffee">Cà phê</option>
+        <option value="tea">Trà</option>
+        <option value="milktea">Trà sữa</option>
+        <option value="juice">Nước ép</option>
+        <option value="matcha">Matcha & Cacao</option>
+        <option value="yogurt">Sữa chua</option>
+        <option value="smoothie">Sinh tố</option>
+        <option value="soda">Soda</option>
+        <option value="topping">Topping</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="product-list"></div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 TNT Coffee. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const products = [
+      // ☕ Cà phê
+      { name: "Cafe Sữa/Đen", price: "15.000đ", category: "coffee", img: "assets/images/cafe-sua.jpg" },
+      { name: "Cafe Muối", price: "19.000đ", category: "coffee", img: "assets/images/cafe-muoi.jpg" },
+      { name: "Cafe Kem Trứng", price: "19.000đ", category: "coffee", img: "assets/images/cafe-kemtrung.jpg" },
+      { name: "Bạc Xỉu/Thêm Kem Muối", price: "22.000đ", category: "coffee", img: "assets/images/bacxiu.jpg" },
+      { name: "Sữa Tươi Cafe Sương Sáo", price: "26.000đ", category: "coffee", img: "assets/images/suatuoi-cafe-suong.jpg" },
+      { name: "Sữa Tươi Cafe Kem Trứng", price: "26.000đ", category: "coffee", img: "assets/images/suatuoi-cafe-kemtrung.jpg" },
+      { name: "Sữa Tươi Sâm Dứa Sương Sáo", price: "26.000đ", category: "coffee", img: "assets/images/samdua-suong.jpg" },
+      { name: "Sữa Tươi TCDD", price: "22.000đ", category: "coffee", img: "assets/images/suatuoi-tcdd.jpg" },
+
+      // 🍋 Trà trái cây
+      { name: "Trà Xoài Chanh Dây", price: "25.000đ", category: "tea", img: "assets/images/tra-xoai-chanhday.jpg" },
+      { name: "Trà Dưa Lưới", price: "25.000đ", category: "tea", img: "assets/images/tra-dualuoi.jpg" },
+      { name: "Trà Đào Cam Dâu", price: "25.000đ", category: "tea", img: "assets/images/tra-daocamdau.jpg" },
+      { name: "Trà Dâu Tằm", price: "25.000đ", category: "tea", img: "assets/images/tra-dautam.jpg" },
+      { name: "Trà Chanh Nha Đam", price: "25.000đ", category: "tea", img: "assets/images/tra-chanh-nhadam.jpg" },
+      { name: "Trà Lài Dứa Thơm", price: "25.000đ", category: "tea", img: "assets/images/tra-laiduathom.jpg" },
+      { name: "Trà Gừng Mật Ong", price: "25.000đ", category: "tea", img: "assets/images/tra-gung-matong.jpg" },
+      { name: "Trà Tắc Xí Muội", price: "25.000đ", category: "tea", img: "assets/images/tra-tac-ximuoi.jpg" },
+
+      // 🧋 Trà sữa
+      { name: "Trà Sữa Khoai Môn", price: "22.000đ", category: "milktea", img: "assets/images/trasua-khoaimon.jpg" },
+      { name: "Trà Sữa Gạo Rang", price: "22.000đ", category: "milktea", img: "assets/images/trasua-gaorang.jpg" },
+      { name: "Trà Sữa Truyền Thống", price: "22.000đ", category: "milktea", img: "assets/images/trasua-truyenthong.jpg" },
+      { name: "Trà Sữa Full Topping", price: "37.000đ", category: "milktea", img: "assets/images/trasua-full.jpg" },
+
+      // 🍎 Nước ép
+      { name: "Nước Ép Táo", price: "25.000đ", category: "juice", img: "assets/images/nuocep-tao.jpg" },
+      { name: "Nước Ép Cam", price: "25.000đ", category: "juice", img: "assets/images/nuocep-cam.jpg" },
+      { name: "Nước Ép Thơm", price: "25.000đ", category: "juice", img: "assets/images/nuocep-thom.jpg" },
+      { name: "Nước Ép Ổi", price: "25.000đ", category: "juice", img: "assets/images/nuocep-oi.jpg" },
+
+      // 🍵 Matcha - Cacao
+      { name: "Matcha Latte", price: "32.000đ", category: "matcha", img: "assets/images/matcha-latte.jpg" },
+      { name: "Matcha Dừa", price: "35.000đ", category: "matcha", img: "assets/images/matcha-dua.jpg" },
+      { name: "Matcha Việt Quất", price: "35.000đ", category: "matcha", img: "assets/images/matcha-vietquat.jpg" },
+      { name: "Cacao Nóng/Đá", price: "29.000đ", category: "matcha", img: "assets/images/cacao.jpg" },
+      { name: "Caramel Cheese Bati", price: "35.000đ", category: "matcha", img: "assets/images/caramel-bati.jpg" },
+
+      // 🥛 Sữa chua
+      { name: "Sữa Chua Chanh Dây", price: "28.000đ", category: "yogurt", img: "assets/images/suachua-chanhday.jpg" },
+      { name: "Sữa Chua Việt Quất", price: "28.000đ", category: "yogurt", img: "assets/images/suachua-vietquat.jpg" },
+      { name: "Sữa Chua Dâu Tây", price: "28.000đ", category: "yogurt", img: "assets/images/suachua-dautay.jpg" },
+      { name: "Sữa Chua Xoài", price: "28.000đ", category: "yogurt", img: "assets/images/suachua-xoai.jpg" },
+
+      // 🍓 Sinh tố
+      { name: "Sinh Tố Bơ", price: "28.000đ", category: "smoothie", img: "assets/images/sinhto-bo.jpg" },
+      { name: "Sinh Tố Sapoche", price: "28.000đ", category: "smoothie", img: "assets/images/sinhto-sapoche.jpg" },
+      { name: "Sinh Tố Việt Quất", price: "28.000đ", category: "smoothie", img: "assets/images/sinhto-vietquat.jpg" },
+      { name: "Sinh Tố Xoài", price: "28.000đ", category: "smoothie", img: "assets/images/sinhto-xoai.jpg" },
+
+      // 🧊 Soda
+      { name: "Soda Thăng Long Đỏ", price: "22.000đ", category: "soda", img: "assets/images/soda-thanglong.jpg" },
+      { name: "Soda Việt Quất", price: "22.000đ", category: "soda", img: "assets/images/soda-vietquat.jpg" },
+      { name: "Soda Chanh Tươi", price: "22.000đ", category: "soda", img: "assets/images/soda-chanh.jpg" },
+      { name: "Soda Chanh Dây", price: "22.000đ", category: "soda", img: "assets/images/soda-chanhday.jpg" },
+
+      // 🍯 Topping
+      { name: "Kem Muối / Kem Cheese", price: "5.000đ", category: "topping", img: "assets/images/kemmuoi.jpg" },
+      { name: "Kem Trứng Nướng", price: "8.000đ", category: "topping", img: "assets/images/kemtrungnuong.jpg" },
+      { name: "Trân Châu Đen / Trắng", price: "5.000đ", category: "topping", img: "assets/images/tranchau.jpg" },
+      { name: "Khúc Bạch / Sương Sáo", price: "5.000đ", category: "topping", img: "assets/images/khucbach.jpg" },
+      { name: "Kem Flan", price: "8.000đ", category: "topping", img: "assets/images/kemflan.jpg" },
+    ];
+
+    const productList = document.getElementById("product-list");
+    const categorySelect = document.getElementById("category");
+
+    function renderProducts(filter = "all") {
+      productList.innerHTML = "";
+      const filtered = products.filter(p => filter === "all" || p.category === filter);
+      filtered.forEach(p => {
+        const card = `
+          <div class="product-card">
+            <img src="${p.img}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>${p.price}</p>
+            <button>Thêm vào giỏ</button>
+          </div>
+        `;
+        productList.insertAdjacentHTML("beforeend", card);
+      });
+    }
+
+    categorySelect.addEventListener("change", e => renderProducts(e.target.value));
+    renderProducts();
+  </script>
+</body>
+</html>

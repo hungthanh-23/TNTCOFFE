@@ -1,0 +1,224 @@
+/* ===========================
+   PRODUCTS PAGE
+=========================== */
+
+.section-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.section-title h1 {
+  font-size: 34px;
+  color: #007b55;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.section-title p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* ===========================
+   FILTER BAR
+=========================== */
+.filter-box {
+  text-align: center;
+  margin: 25px 0 40px;
+}
+
+.filter-box label {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 8px;
+  color: #333;
+}
+
+.filter-box select {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #007b55;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.filter-box select:hover {
+  background: #007b55;
+  color: #fff;
+}
+
+/* ===========================
+   PRODUCT GRID
+=========================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 60px 60px;
+}
+
+/* Card tổng thể */
+.product-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Hình ảnh sản phẩm */
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Nội dung thông tin */
+.product-card h3 {
+  font-size: 18px;
+  margin: 15px 15px 8px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.product-card p {
+  text-align: center;
+  font-size: 16px;
+  color: #007b55;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Chi tiết phụ */
+.product-card .details {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Nút thêm giỏ hàng */
+.product-card button {
+  display: block;
+  width: 80%;
+  margin: 0 auto 16px;
+  background: linear-gradient(90deg, #007b55, #00a66b);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-card button:hover {
+  background: linear-gradient(90deg, #005f40, #009b60);
+  transform: scale(1.05);
+}
+
+/* Tag thương hiệu */
+.product-card::before {
+  content: "TNT Coffee";
+  position: absolute;
+  top: 10px;
+  left: -40px;
+  background: #007b55;
+  color: #fff;
+  transform: rotate(-45deg);
+  width: 140px;
+  text-align: center;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+/* ===========================
+   TOAST MESSAGE
+=========================== */
+.toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #007b55;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadein 0.5s, fadeout 0.5s 1.7s;
+  z-index: 9999;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(15px); }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .product-grid {
+    padding: 0 40px 40px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title h1 {
+    font-size: 26px;
+  }
+
+  .filter-box label {
+    font-size: 16px;
+  }
+
+  .filter-box select {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+
+  .product-grid {
+    padding: 0 20px 30px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toast {
+    right: 10px;
+    left: 10px;
+    font-size: 14px;
+  }
+}
