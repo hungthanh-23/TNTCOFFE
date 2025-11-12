@@ -68,13 +68,17 @@
       <p>Khi sử dụng website DrinkShop, bạn đồng ý với các quy định về mua hàng, thanh toán, giao hàng và chính sách bảo mật hiện hành.</p>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 DrinkShop. All rights reserved.</p>
-    <p><a href="#">Quay lại đầu trang ↑</a></p>
-  </footer>
-
   <script src="assets/js/contact.js"></script>
+
+  <div id="footer-placeholder"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
 </body>
 </html>

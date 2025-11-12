@@ -9,3 +9,4 @@ registerButton.onclick = function () {
 loginButton.onclick = function () {
   container.className = 'close';
 };
+

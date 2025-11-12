@@ -1,38 +1,58 @@
-/* Body */
+/* 🌿 Toàn trang */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  background-color: #fafafa;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  color: #eee;
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
 }
 
-/* Header */
+/* 🌫 Lớp phủ nền */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.45);
+  z-index: -1;
+}
+
+/* ==========================
+   HEADER MỚI
+========================== */
 .header {
-  background: linear-gradient(90deg, #007b55, #00a070);
+  background: linear-gradient(90deg, #0d0d0d, #004d3d, #007b55);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 14px 50px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Logo */
 .logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 1px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fefefe;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  color: #fdd835;
+  transform: scale(1.06);
 }
 
+/* Thanh điều hướng */
 .nav {
   display: flex;
   align-items: center;
@@ -40,22 +60,23 @@ body {
 }
 
 .nav a {
-  color: #fff;
+  color: #f0f0f0;
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
 }
 
+/* Hiệu ứng gạch chân vàng */
 .nav a::after {
   content: '';
   display: block;
   height: 2px;
   width: 0;
-  background: #f8f406;
+  background: #fdd835;
   transition: width 0.3s;
   position: absolute;
   bottom: 0;
@@ -66,8 +87,45 @@ body {
   width: 100%;
 }
 
+/* Hiệu ứng hover */
 .nav a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* Responsive (mobile) */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 12px 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 28px;
+    margin-top: 8px;
+  }
+}
+
+/* 🌟 Tiêu đề phần danh mục & sản phẩm nổi bật */
+.categories h2,
+.best-seller h2 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 /* Hero Section */
@@ -169,20 +227,143 @@ body {
 }
 
 /* Footer */
+/* Footer tổng thể */
 .footer {
-  background: #333;
+  background: linear-gradient(90deg, #0f1f1b, #004d3d, #006b4a);
   color: #eee;
-  text-align: center;
-  padding: 25px;
+  padding: 40px 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.footer-about {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+}
+
+.footer-about h3 {
+  color: #ffb940;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Liên hệ & Chính sách */
+.footer-contact,
+.footer-policy {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-contact h4,
+.footer-policy h4 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  color: #ccc;
   font-size: 14px;
 }
-.footer a {
+
+.footer-policy ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-policy li {
+  margin-bottom: 6px;
+}
+
+.footer-policy a {
   color: #ccc;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
-.footer a:hover {
+
+.footer-policy a:hover {
+  color: #ffb940;
+}
+
+/* Dòng cuối footer */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding-top: 12px;
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.footer-bottom span {
+  color: #ffb940;
+  font-weight: 600;
+}
+
+/* Cân chỉnh icon mạng xã hội */
+.social-icons {
+  margin-top: 12px;
+}
+
+.social-icons a {
+  color: #ffb940;
+  margin-right: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
   color: #fff;
+  transform: scale(1.1);
 }
+
+/* Responsive cho mobile */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .footer-about,
+  .footer-contact,
+  .footer-policy {
+    max-width: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-about p {
+    max-width: 100%;
+  }
+}
+
 
 /* Responsive Header (Mobile) */
 @media screen and (max-width: 768px) {
@@ -688,6 +869,52 @@ textarea {
 .btn-outline:hover {
   background: #007b55;
   color: white;
+}
+
+
+/* 🌿 Nền toàn trang */
+body {
+  position: relative;
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* 🌫 Lớp phủ làm dịu nền */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* phủ đen nhẹ để nổi chữ */
+  z-index: -1;
+}
+
+/* 🌟 Tiêu đề phần danh mục & sản phẩm nổi bật */
+.categories h2,
+.best-seller h2 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* tạo bóng giúp chữ nổi bật */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+
+/* Giỏ hàng - chỉnh màu chữ thành đen */
+#cart-table td,
+#cart-table th {
+  color: #222; /* đen đậm dễ đọc */
+}
+
+/* Nếu hàng hover có nền sáng thì vẫn giữ chữ đen */
+#cart-table tr:hover td {
+  color: #000;
+}
+
+/* Nếu chữ trong input số lượng cũng mờ, chỉnh luôn */
+.qty-input {
+  color: #000;
 }
 
 

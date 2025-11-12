@@ -124,8 +124,8 @@ button {
   display: block;
   margin: 1em auto;
   border-radius: 40px;
-  border: 1px solid #ff4b2b;
-  background: #ff4b2b;
+  border: 1px solid #474040;
+  background: #474040;
   color: #fff;
   font-size: 1.2em;
   font-weight: bold;
@@ -227,7 +227,7 @@ button:focus {
 }
 
 .front {
-  background: linear-gradient(-45deg, #FFCF00 0%, #FC4F4F 100%) no-repeat 0 0/200%;
+  background: linear-gradient(-45deg, #FFCF00 0%, #474040 100%) no-repeat 0 0/200%;
   z-index: 3;
 }
 

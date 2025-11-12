@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giỏ hàng | DrinkShop</title>
+  <title>Giỏ hàng | TNT COFFEE</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="logo">DrinkShop</div>
+    <div class="logo">TNT COFFEE</div>
     <nav class="nav">
       <a href="index.html">Trang chủ</a>
       <a href="products.html">Sản phẩm</a>
@@ -85,17 +85,19 @@
     <button id="checkout">Xác nhận đơn hàng</button>
   </div>
 </div>
-
-
   </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 DrinkShop. All rights reserved.</p>
-    <p><a href="contact.html">Chính sách & Liên hệ</a></p>
-  </footer>
-
   <!-- Thêm script ở cuối body -->
   <script src="assets/js/cart.js"></script>
+
+  <div id="footer-placeholder"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
 </body>
 </html>

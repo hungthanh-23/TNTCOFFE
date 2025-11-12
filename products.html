@@ -130,11 +130,6 @@
     <div class="product-grid" id="product-list"></div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 TNT Coffee. All rights reserved.</p>
-  </footer>
-
   <!-- Kết nối cart.js -->
   <script src="assets/js/cart.js"></script>
   <script>
@@ -143,92 +138,71 @@
     // ==========================
    const products = [
   // ===== CÀ PHÊ =====
-  { id: 1, name: "Cafe Sữa/Đen", priceM: 15000, priceL: 15000, category: "coffee", img: "assets/images/cafe-sua.jpg" },
-  { id: 2, name: "Cafe Muối", priceM: 22000, priceL: 22000, category: "coffee", img: "assets/images/cafe-muoi.jpg" },
-  { id: 3, name: "Cafe Kem Trứng", priceM: 29000, priceL: 29000, category: "coffee", img: "assets/images/cafe-kemtrung.jpg" },
-  { id: 4, name: "Bạc Xỉu / Thêm Kem Muối", priceM: 22000, priceL: 27000, category: "coffee", img: "assets/images/bacxiu.jpg" },
-  { id: 5, name: "Sữa Tươi Cafe Sương Sáo", priceM: 26000, priceL: 26000, category: "coffee", img: "assets/images/suatuoi-cafe-suong.jpg" },
-  { id: 6, name: "Sữa Tươi Cafe Kem Trứng", priceM: 26000, priceL: 26000, category: "coffee", img: "assets/images/suatuoi-kemtrung.jpg" },
-  { id: 7, name: "Sữa Tươi Sâm Dứa Sương Sáo", priceM: 26000, priceL: 26000, category: "coffee", img: "assets/images/suatuoi-samdua.jpg" },
-  { id: 8, name: "Sữa Tươi TCDĐ", priceM: 22000, priceL: 28000, category: "coffee", img: "assets/images/suatuoi-tcdd.jpg" },
+{ id: 1, name: "Cafe Sữa", priceM: 15000, priceL: 15000, category: "coffee", img: "assets/images/cafe-sua.jpg" },
+{ id: 2, name: "Cafe Đen", priceM: 15000, priceL: 15000, category: "coffee", img: "assets/images/cafe-den.jpg" },
+{ id: 3, name: "Cafe Muối", priceM: 22000, priceL: 22000, category: "coffee", img: "assets/images/cafe-muoi.jpg" },
+{ id: 4, name: "Cafe Kem Trứng", priceM: 29000, priceL: 29000, category: "coffee", img: "assets/images/cafe-kemtrung.jpg" },
+{ id: 5, name: "Bạc Xỉu", priceM: 22000, priceL: 27000, category: "coffee", img: "assets/images/bacxiu.jpg" },
+{ id: 6, name: "Bạc Xỉu Kem Muối", priceM: 27000, priceL: 27000, category: "coffee", img: "assets/images/bacxiu-kemmuoi.jpg" },
+{ id: 7, name: "Sữa Tươi Cafe Sương Sáo", priceM: 26000, priceL: 26000, category: "coffee", img: "assets/images/suatuoi-cafe-suong.jpg" },
+{ id: 8, name: "Sữa Tươi Cafe Kem Trứng", priceM: 26000, priceL: 26000, category: "coffee", img: "assets/images/suatuoi-kemtrung.jpg" },
+{ id: 9, name: "Sữa Tươi Sâm Dứa Sương Sáo", priceM: 26000, priceL: 26000, category: "coffee", img: "assets/images/suatuoi-samdua.jpg" },
+{ id: 10, name: "Sữa Tươi TCDĐ", priceM: 22000, priceL: 28000, category: "coffee", img: "assets/images/suatuoi-tcdd.jpg" },
 
-  // ===== TRÀ TRÁI CÂY =====
-  { id: 9, name: "Trà Xoài Chanh Dây", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-xoaichanhday.jpg" },
-  { id: 10, name: "Trà Dưa Lưới", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-dualuoi.jpg" },
-  { id: 11, name: "Trà Trái Cây Nhiệt Đới", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-traicaynhietdoi.jpg" },
-  { id: 12, name: "Trà Nhãn Hạt Chia", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-nhanhatchia.jpg" },
-  { id: 13, name: "Trà Mận", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-man.jpg" },
-  { id: 14, name: "Trà Dâu Tằm", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-dautam.jpg" },
-  { id: 15, name: "Trà Đào Cam Dâu", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-daocamdau.jpg" },
-  { id: 16, name: "Trà Cam Xí Muội", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-camximuoi.jpg" },
-  { id: 17, name: "Trà Chanh Nha Đam", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-chanhnhadam.jpg" },
-  { id: 18, name: "Trà Dâu Tây", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-dautay.jpg" },
-  { id: 19, name: "Trà Lài Dác Thơm", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-laidacthom.jpg" },
-  { id: 20, name: "Trà Gừng Mọng", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-gungmong.jpg" },
-  { id: 21, name: "Sâm Bí Đao", priceM: 17000, priceL: 20000, category: "tea", img: "assets/images/sambi-dao.jpg" },
+// ===== TRÀ TRÁI CÂY =====
+{ id: 11, name: "Trà Xoài Chanh Dây", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-xoaichanhday.jpg" },
+{ id: 12, name: "Trà Dưa Lưới", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-dualuoi.jpg" },
+{ id: 13, name: "Trà Trái Cây Nhiệt Đới", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-traicaynhietdoi.jpg" },
+{ id: 14, name: "Trà Nhãn Hạt Chia", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-nhanhatchia.jpg" },
+{ id: 15, name: "Trà Mận", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-man.jpg" },
+{ id: 16, name: "Trà Dâu Tằm", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-dautam.jpg" },
+{ id: 17, name: "Trà Đào Cam Dâu", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-daocamdau.jpg" },
+{ id: 18, name: "Trà Cam Xí Muội", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-camximuoi.jpg" },
+{ id: 19, name: "Trà Chanh Nha Đam", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-chanhnhadam.jpg" },
+{ id: 20, name: "Trà Dâu Tây", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-dautay.jpg" },
+{ id: 21, name: "Trà Lài Đác Thơm", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-laidacthom.jpg" },
+{ id: 22, name: "Trà Gừng Mọng", priceM: 20000, priceL: 25000, category: "tea", img: "assets/images/tra-gungmong.jpg" },
+{ id: 23, name: "Sâm Bí Đao", priceM: 17000, priceL: 20000, category: "tea", img: "assets/images/sambi-dao.jpg" },
 
-  // ===== NƯỚC ÉP =====
-  { id: 22, name: "Ép Táo / Thơm / Cam", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-cam.jpg" },
-  { id: 23, name: "Ép Ổi / Cóc / Xoài", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-oi.jpg" },
-  { id: 24, name: "Ép Dưa Hấu / Dưa Lưới", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-duahau.jpg" },
-  { id: 25, name: "Ép Cam – Chanh Dây", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-camchanhday.jpg" },
-  { id: 26, name: "Ép Cà Chua / Cà Rốt", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-carot.jpg" },
-  { id: 27, name: "Ép Nho Tươi", priceM: 29000, priceL: 35000, category: "juice", img: "assets/images/ep-nhotuoi.jpg" },
+// ===== NƯỚC ÉP =====
+{ id: 24, name: "Ép Táo", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-tao.jpg" },
+{ id: 25, name: "Ép Thơm", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-thom.jpg" },
+{ id: 26, name: "Ép Cam", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-cam.jpg" },
+{ id: 27, name: "Ép Cóc", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-coc.jpg" },
+{ id: 28, name: "Ép Ổi", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-oi.jpg" },
+{ id: 29, name: "Ép Xoài", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-xoai.jpg" },
+{ id: 30, name: "Ép Dưa Hấu", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-duahau.jpg" },
+{ id: 31, name: "Ép Dưa Lưới", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-dualuoi.jpg" },
+{ id: 32, name: "Ép Chanh Dây", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-chanhday.jpg" },
+{ id: 33, name: "Ép Cà Chua", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-cachua.jpg" },
+{ id: 34, name: "Ép Cà Rốt", priceM: 20000, priceL: 25000, category: "juice", img: "assets/images/ep-carot.jpg" },
+{ id: 35, name: "Ép Nho Tươi", priceM: 29000, priceL: 35000, category: "juice", img: "assets/images/ep-nhotuoi.jpg" },
 
-  // ===== MATCHA – CACAO – KHOAI MÔN =====
-  { id: 28, name: "Matcha Latte", priceM: 27000, priceL: 32000, category: "matcha", img: "assets/images/matcha-latte.jpg" },
-  { id: 29, name: "Matcha Latte Kem Cheese", priceM: 29000, priceL: 35000, category: "matcha", img: "assets/images/matcha-kemcheese.jpg" },
-  { id: 30, name: "Matcha Đá", priceM: 29000, priceL: 35000, category: "matcha", img: "assets/images/matcha-da.jpg" },
-  { id: 31, name: "Matcha Việt Quất", priceM: 29000, priceL: 35000, category: "matcha", img: "assets/images/matcha-vietquat.jpg" },
-  { id: 32, name: "Matcha Cacao", priceM: 29000, priceL: 35000, category: "matcha", img: "assets/images/matcha-cacao.jpg" },
-  { id: 33, name: "Khoai Môn Latte", priceM: 27000, priceL: 32000, category: "matcha", img: "assets/images/khoaimon-latte.jpg" },
-  { id: 34, name: "Khoai Môn Latte Kem Cheese", priceM: 29000, priceL: 35000, category: "matcha", img: "assets/images/khoaimon-kemcheese.jpg" },
-  { id: 35, name: "Ca Cao Nóng / Đá", priceM: 22000, priceL: 27000, category: "matcha", img: "assets/images/cacaonongda.jpg" },
-  { id: 36, name: "Ca Cao Kem Cheese", priceM: 25000, priceL: 29000, category: "matcha", img: "assets/images/cacaokemcheese.jpg" },
-  { id: 37, name: "Ca cao Dâu / Việt Quất", priceM: 25000, priceL: 29000, category: "matcha", img: "assets/images/cacaodau.jpg" }, 
-  { id: 38, name: "Caramel Cheese Bati", priceM: 29000, priceL: 35000, category: "matcha", img: "assets/images/caramel-bati.jpg" },
+// ===== MATCHA – CACAO =====
+{ id: 36, name: "Ca Cao Nóng", priceM: 22000, priceL: 27000, category: "matcha", img: "assets/images/cacao-nong.jpg" },
+{ id: 37, name: "Ca Cao Đá", priceM: 22000, priceL: 27000, category: "matcha", img: "assets/images/cacao-da.jpg" },
+{ id: 38, name: "Ca Cao Dâu", priceM: 25000, priceL: 29000, category: "matcha", img: "assets/images/cacao-dau.jpg" },
+{ id: 39, name: "Ca Cao Việt Quất", priceM: 25000, priceL: 29000, category: "matcha", img: "assets/images/cacao-vietquat.jpg" },
 
-  // ===== SỮA CHUA =====
-  { id: 39, name: "Chanh Dây", priceM: 28000, priceL: 28000, category: "yogurt", img: "assets/images/suachua-chanhday.jpg" },
-  { id: 40, name: "Việt Quất", priceM: 28000, priceL: 28000, category: "yogurt", img: "assets/images/suachua-vietquat.jpg" },
-  { id: 41, name: "Đào", priceM: 28000, priceL: 28000, category: "yogurt", img: "assets/images/suachua-dao.jpg" },
-  { id: 42, name: "Dâu Tây", priceM: 28000, priceL: 28000, category: "yogurt", img: "assets/images/suachua-dautay.jpg" },
-  { id: 43, name: "Mận Đỏ", priceM: 28000, priceL: 28000, category: "yogurt", img: "assets/images/suachua-mando.jpg" },
-  { id: 44, name: "Xoài", priceM: 28000, priceL: 28000, category: "yogurt", img: "assets/images/suachua-xoai.jpg" },
+// ===== TRÀ SỮA =====
+{ id: 40, name: "Trà Sữa Khoai Môn", priceM: 18000, priceL: 22000, category: "milktea", img: "assets/images/trasua-khoaimon.jpg" },
+{ id: 41, name: "Trà Sữa Socola", priceM: 18000, priceL: 22000, category: "milktea", img: "assets/images/trasua-socola.jpg" },
+{ id: 42, name: "Trà Sữa Gạo Rang", priceM: 18000, priceL: 22000, category: "milktea", img: "assets/images/trasua-gaorang.jpg" },
+{ id: 43, name: "Trà Sữa Truyền Thống", priceM: 18000, priceL: 22000, category: "milktea", img: "assets/images/trasua-truyenthong.jpg" },
 
-  // ===== TRÀ SỮA =====
-  { id: 45, name: "Trà Sữa Khoai Môn / Socola", priceM: 18000, priceL: 22000, category: "milktea", img: "assets/images/trasua-khoaimon.jpg" },
-  { id: 46, name: "Trà Sữa Gạo Rang", priceM: 18000, priceL: 22000, category: "milktea", img: "assets/images/trasua-gaorang.jpg" },
-  { id: 47, name: "Trà Sữa Truyền Thống", priceM: 18000, priceL: 22000, category: "milktea", img: "assets/images/trasua-truyenthong.jpg" },
-
-  // ===== SINH TỐ =====
-  { id: 48, name: "Sinh Tố Bơ", priceM: 28000, priceL: 28000, category: "smoothie", img: "assets/images/sinhto-bo.jpg" },
-  { id: 49, name: "Sinh Tố Sapoche", priceM: 28000, priceL: 28000, category: "smoothie", img: "assets/images/sinhto-sapoche.jpg" },
-  { id: 50, name: "Sinh Tố Việt Quất", priceM: 28000, priceL: 28000, category: "smoothie", img: "assets/images/sinhto-vietquat.jpg" },
-  { id: 51, name: "Sinh Tố Đào", priceM: 28000, priceL: 28000, category: "smoothie", img: "assets/images/sinhto-sapoche.jpg" },
-  { id: 52, name: "Sinh Tố Dâu", priceM: 28000, priceL: 28000, category: "smoothie", img: "assets/images/sinhto-dau.jpg" },
-  { id: 53, name: "Sinh Tố Xoài", priceM: 28000, priceL: 28000, category: "smoothie", img: "assets/images/sinhto-xoai.jpg" },
-  { id: 54, name: "Sinh Tố Chanh Dây", priceM: 28000, priceL: 28000, category: "smoothie", img: "assets/images/sinhto-chanhday.jpg" },
-
-  // ===== SODA =====
-  { id: 55, name: "Soda Thăng Long Đỏ", priceM: 19000, priceL: 22000, category: "soda", img: "assets/images/soda-thanglongdo.jpg" },
-  { id: 56, name: "Soda Việt Quất", priceM: 19000, priceL: 22000, category: "soda", img: "assets/images/soda-vietquat.jpg" },
-  { id: 57, name: "Soda Chanh Tươi", priceM: 19000, priceL: 22000, category: "soda", img: "assets/images/soda-chanhtuoi.jpg" },
-  { id: 58, name: "Soda Chanh Dây", priceM: 19000, priceL: 22000, category: "soda", img: "assets/images/soda-chanhday.jpg" },
-
-  // ===== TOPPING =====
-  { id: 59, name: "Kem Muối / Kem Cheese", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-kemcheese.jpg" },
-  { id: 60, name: "Kem Trứng Nướng", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-kemtrung.jpg" },
-  { id: 61, name: "Thạch Đào Đường Nâu", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-thachdaoduongnau.jpg" },  
-  { id: 62, name: "Sương Sáo / Khúc Bạch", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-kemtrung.jpg" },
-  { id: 63, name: "Hạt Chia", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-kemtrung.jpg" },
-  { id: 64, name: "Nha Đam / Pudding", priceM: 7000, priceL: 7000, category: "topping", img: "assets/images/topping-kemtrung.jpg" },
-  { id: 65, name: "Kem Flan", priceM: 8000, priceL: 8000, category: "topping", img: "assets/images/topping-kemtrung.jpg" },
-  { id: 66, name: "Phô Mai Cheese Ball", priceM: 8000, priceL: 8000, category: "topping", img: "assets/images/topping-kemtrung.jpg" },
-  { id: 67, name: "Trân Châu Đen / Trắng", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-tranchau.jpg" },
-  { id: 68, name: "Pudding Socola / Khoai Môn", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-pudding.jpg" },
-  { id: 69, name: "Thạch Phô Mai Tươi", priceM: 8000, priceL: 8000, category: "topping", img: "assets/images/topping-phomai.jpg" },
-  { id: 70, name: "Đác Thơm", priceM: 8000, priceL: 8000, category: "topping", img: "assets/images/topping-dacthom.jpg" }
+// ===== TOPPING =====
+{ id: 59, name: "Kem Muối", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-kemmuoi.jpg" },
+{ id: 60, name: "Kem Cheese", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-kemcheese.jpg" },
+{ id: 61, name: "Sương Sáo", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-suongsa.jpg" },
+{ id: 62, name: "Khúc Bạch", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-khucbach.jpg" },
+{ id: 63, name: "Nha Đam", priceM: 7000, priceL: 7000, category: "topping", img: "assets/images/topping-nhadam.jpg" },
+{ id: 64, name: "Pudding", priceM: 7000, priceL: 7000, category: "topping", img: "assets/images/topping-pudding.jpg" },
+{ id: 65, name: "Trân Châu Đen", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-tranchau-den.jpg" },
+{ id: 66, name: "Trân Châu Trắng", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-tranchau-trang.jpg" },
+{ id: 67, name: "Pudding Socola", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-pudding-socola.jpg" },
+{ id: 68, name: "Pudding Khoai Môn", priceM: 5000, priceL: 5000, category: "topping", img: "assets/images/topping-pudding-khoaimon.jpg" },
+{ id: 69, name: "Thạch Phô Mai Tươi", priceM: 8000, priceL: 8000, category: "topping", img: "assets/images/topping-phomai.jpg" },
+{ id: 70, name: "Đác Thơm", priceM: 8000, priceL: 8000, category: "topping", img: "assets/images/topping-dacthom.jpg" }
 ];
 
 localStorage.setItem("productsData", JSON.stringify(products));
@@ -289,5 +263,16 @@ function viewProduct(id) {
       if (typeof updateCartBadge === "function") updateCartBadge();
     });
   </script>
+
+  <div id="footer-placeholder"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
 </body>
 </html>
