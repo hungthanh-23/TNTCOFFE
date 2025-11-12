@@ -918,3 +918,19 @@ body::before {
 }
 
 
+.btn-buy-now {
+  background: #ff7b00;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn-buy-now:hover {
+  background: #e66a00;
+}
+
+
