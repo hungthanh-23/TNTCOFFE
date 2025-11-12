@@ -5,6 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Xác nhận đơn hàng | DrinkShop</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ========== CONFIRM PAGE STYLE ========== */
+    body {
+      background-color: #f6f9f7;
+      font-family: "Segoe UI", sans-serif;
+      color: #333;
+    }
+
+    .confirm-section {
+      max-width: 650px;
+      margin: 70px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      padding: 40px 50px;
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .confirm-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      background: #007b55;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      animation: popIn 0.4s ease-out;
+    }
+
+    h2 {
+      color: #007b55;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 6px 0;
+    }
+
+    .order-info {
+      margin: 25px 0;
+      padding: 22px;
+      background: #f1f8f5;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .order-info strong {
+      color: #007b55;
+    }
+
+    .confirm-btns {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn-green {
+      background: #007b55;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-green:hover {
+      background: #009e6c;
+    }
+
+    .btn-outline {
+      border: 2px solid #007b55;
+      color: #007b55;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: #007b55;
+      color: white;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #2c2c2c;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(15px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes popIn {
+      from {transform: scale(0.7); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -19,34 +132,53 @@
     </nav>
   </header>
 
-  <!-- Trang xác nhận -->
-  <section class="confirmation">
-    <div class="confirm-box">
-      <img src="assets/images/success.png" alt="Thành công" class="confirm-icon">
-      <h1>🎉 Đặt hàng thành công!</h1>
-      <p>Cảm ơn bạn đã mua hàng tại <strong>DrinkShop</strong>.</p>
+  <!-- Nội dung xác nhận -->
+  <section class="confirm-section">
+    <div class="confirm-icon">✅</div>
+    <h2>Đặt hàng thành công!</h2>
+    <p>Cảm ơn bạn đã mua hàng tại <strong>DrinkShop</strong>.</p>
 
-      <div class="order-info">
-        <p><strong>Mã đơn hàng:</strong> <span id="order-id">#DS2025-</span></p>
-        <p><strong>Thời gian đặt:</strong> <span id="order-date"></span></p>
-        <p><strong>Phương thức thanh toán:</strong> <span id="order-pay"></span></p>
-      </div>
+    <div class="order-info">
+      <p><strong>Mã đơn hàng:</strong> <span id="order-id">—</span></p>
+      <p><strong>Thời gian đặt:</strong> <span id="order-time">—</span></p>
+      <p><strong>Phương thức thanh toán:</strong> <span id="order-pay">—</span></p>
+      <hr>
+      <p><strong>Họ và tên:</strong> <span id="order-name">—</span></p>
+      <p><strong>Số điện thoại:</strong> <span id="order-phone">—</span></p>
+      <p><strong>Địa chỉ giao hàng:</strong> <span id="order-address">—</span></p>
+      <p><strong>Tổng thanh toán:</strong> <span id="order-total">—</span></p>
+    </div>
 
-      <p>Chúng tôi sẽ liên hệ và giao hàng trong thời gian sớm nhất.</p>
-
-      <div class="confirm-actions">
-        <a href="products.html" class="btn">🛍️ Tiếp tục mua hàng</a>
-        <a href="account.html" class="btn-outline">📦 Theo dõi đơn hàng</a>
-      </div>
+    <div class="confirm-btns">
+      <a href="products.html" class="btn-green">🛒 Tiếp tục mua hàng</a>
+      <a href="account.html" class="btn-outline">📦 Theo dõi đơn hàng</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 DrinkShop. All rights reserved.</p>
-    <p><a href="contact.html">Chính sách & Liên hệ</a></p>
+  <footer>
+    © 2025 DrinkShop. All rights reserved. |
+    <a href="contact.html" style="color:#fff; text-decoration:underline;">Chính sách & Liên hệ</a>
   </footer>
 
-  <script src="assets/js/confirm.js"></script>
+  <!-- Script đọc dữ liệu từ localStorage -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const info = JSON.parse(localStorage.getItem("orderInfo"));
+      if (info) {
+        document.getElementById("order-id").textContent = info.orderId || "—";
+        document.getElementById("order-time").textContent = info.time || "—";
+        document.getElementById("order-pay").textContent = info.payMethod?.toUpperCase() || "—";
+        document.getElementById("order-name").textContent = info.name || "—";
+        document.getElementById("order-phone").textContent = info.phone || "—";
+        document.getElementById("order-address").textContent = info.address || "—";
+        document.getElementById("order-total").textContent = info.grandtotal || "—";
+        localStorage.removeItem("orderInfo"); // xoá sau khi hiển thị
+      } else {
+        document.querySelector(".order-info").innerHTML =
+          "<p style='text-align:center;color:#999;'>Không tìm thấy thông tin đơn hàng.</p>";
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,164 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 60px 80px;
+}
+
+.detail-left img {
+  width: 400px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.detail-right {
+  max-width: 420px;
+}
+
+h1 {
+  color: #007b55;
+  margin-bottom: 8px;
+}
+
+.category {
+  font-size: 15px;
+  color: #777;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007b55;
+  margin-bottom: 15px;
+}
+
+.desc {
+  margin-bottom: 25px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.options h4 {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.option-btn {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+  padding: 8px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option-btn.active {
+  background: #007b55;
+  color: #fff;
+  border-color: #007b55;
+}
+
+.option-btn:hover {
+  border-color: #007b55;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.quantity button {
+  background: #007b55;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quantity input {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  height: 32px;
+}
+
+.add-cart {
+  width: 100%;
+  background: #007b55;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.add-cart:hover {
+  background: #005f40;
+}
+
+.back-btn {
+  margin-top: 15px;
+  width: 100%;
+  background: none;
+  border: 1px solid #007b55;
+  color: #007b55;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #007b55;
+  color: #fff;
+}
+
+
+/* === TOAST MESSAGE === */
+.toast {
+  visibility: hidden;
+  min-width: 280px;
+  margin-left: -140px;
+  background-color: #007b55;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 40px;
+  font-size: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

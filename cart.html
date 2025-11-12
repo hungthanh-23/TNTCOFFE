@@ -22,6 +22,7 @@
   <!-- Giỏ hàng -->
   <section class="cart">
     <h2>🛒 Giỏ hàng của bạn</h2>
+
     <table id="cart-table">
       <thead>
         <tr>
@@ -32,45 +33,60 @@
           <th>Xóa</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- sản phẩm render bằng JS -->
-      </tbody>
+      <tbody></tbody>
     </table>
 
     <div class="cart-summary">
-      <div class="coupon">
-        <label for="coupon">Mã giảm giá:</label>
-        <input type="text" id="coupon" placeholder="Nhập mã (ví dụ: DRINK10)">
-        <button id="apply-coupon">Áp dụng</button>
-      </div>
+  <!-- THÔNG TIN KHÁCH HÀNG -->
+  <div class="customer-info">
+  <h3>📦 Thông tin khách hàng</h3>
 
-      <div class="shipping">
-        <label for="shipping">Phương thức giao hàng:</label>
-        <select id="shipping">
-          <option value="0">Miễn phí (Nội thành)</option>
-          <option value="15000">Ngoại thành (+15.000đ)</option>
-          <option value="30000">Liên tỉnh (+30.000đ)</option>
-        </select>
-      </div>
+  <label for="customer-name">Họ và tên:</label>
+  <input type="text" id="customer-name" placeholder="Nhập họ tên đầy đủ" required>
 
-      <div class="payment">
-        <label>Phương thức thanh toán:</label>
-        <div class="payment-options">
-          <label><input type="radio" name="pay" value="card"> Thẻ VISA/Master</label>
-          <label><input type="radio" name="pay" value="vnpay"> VNPay/QR</label>
-          <label><input type="radio" name="pay" value="cod" checked> Thanh toán khi nhận hàng (COD)</label>
-        </div>
-      </div>
+  <label for="customer-phone">Số điện thoại:</label>
+  <input type="text" id="customer-phone" placeholder="VD: 0912345678" required>
 
-      <div class="total">
-        <p>Tạm tính: <span id="subtotal">0đ</span></p>
-        <p>Phí ship: <span id="shipping-fee">0đ</span></p>
-        <p>Giảm giá: <span id="discount">0đ</span></p>
-        <h3>Tổng cộng: <span id="grandtotal">0đ</span></h3>
-      </div>
+  <label for="customer-email">Email:</label>
+  <input type="email" id="customer-email" placeholder="VD: example@gmail.com">
 
-      <button id="checkout">Xác nhận đơn hàng</button>
+  <label for="customer-address">Địa chỉ giao hàng:</label>
+  <textarea id="customer-address" rows="3" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành" required></textarea>
+</div>
+
+
+  <!-- MÃ GIẢM GIÁ VÀ THANH TOÁN -->
+  <div class="order-options">
+    <label for="coupon">Mã giảm giá:</label>
+    <input type="text" id="coupon" placeholder="Nhập mã (ví dụ: DRINK10)">
+    <button id="apply-coupon">Áp dụng</button>
+
+    <label for="shipping">Phương thức giao hàng:</label>
+    <select id="shipping">
+      <option value="0">Miễn phí (Nội thành)</option>
+      <option value="15000">Ngoại thành (+15.000đ)</option>
+      <option value="30000">Liên tỉnh (+30.000đ)</option>
+    </select>
+
+    <label>Phương thức thanh toán:</label>
+    <div class="payment-options">
+      <label><input type="radio" name="pay" value="card"> Thẻ VISA/Master</label>
+      <label><input type="radio" name="pay" value="vnpay"> VNPay/QR</label>
+      <label><input type="radio" name="pay" value="cod" checked> Thanh toán khi nhận hàng (COD)</label>
     </div>
+  </div>
+
+  <!-- TỔNG KẾT -->
+  <div class="total">
+    <p><span>Tạm tính:</span><span id="subtotal">0đ</span></p>
+    <p><span>Phí ship:</span><span id="shipping-fee">0đ</span></p>
+    <p><span>Giảm giá:</span><span id="discount">0đ</span></p>
+    <h3><span>Tổng cộng:</span><span id="grandtotal">0đ</span></h3>
+    <button id="checkout">Xác nhận đơn hàng</button>
+  </div>
+</div>
+
+
   </section>
 
   <!-- Footer -->
@@ -79,6 +95,7 @@
     <p><a href="contact.html">Chính sách & Liên hệ</a></p>
   </footer>
 
+  <!-- Thêm script ở cuối body -->
   <script src="assets/js/cart.js"></script>
 </body>
 </html>

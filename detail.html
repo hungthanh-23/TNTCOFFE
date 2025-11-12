@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm | TNT Coffee</title>
+  <link rel="stylesheet" href="assets/css/detail.css">
+</head>
+
+<body>
+  <div class="detail-container">
+    <div class="detail-left">
+      <img id="product-img" src="" alt="Sản phẩm TNT Coffee">
+    </div>
+
+    <div class="detail-right">
+      <h1 id="product-name"></h1>
+      <p id="product-category" class="category"></p>
+      <p id="product-price" class="price"></p>
+
+      <p id="product-desc" class="desc">
+        Một trong những món được yêu thích nhất tại TNT Coffee, pha chế tươi mới mỗi ngày.
+      </p>
+
+      <div class="options">
+        <h4>Kích cỡ</h4>
+        <button class="option-btn active" data-size="M">M</button>
+        <button class="option-btn" data-size="L">L</button>
+      </div>
+
+      <div class="options sweetness-options">
+          <h4>Độ ngọt</h4>
+          <button class="option-btn">Ít</button>
+          <button class="option-btn active">Bình thường</button>
+          <button class="option-btn">Nhiều</button>
+      </div>
+
+      <div class="options ice-options">
+          <h4>Đá</h4>
+          <button class="option-btn">Ít</button>
+          <button class="option-btn active">Bình thường</button>
+          <button class="option-btn">Nhiều</button>
+      </div>
+
+
+      <div class="quantity">
+        <button id="minus">−</button>
+        <input type="number" id="qty" value="1" min="1">
+        <button id="plus">+</button>
+      </div>
+
+      <button id="add-cart" class="add-cart">🛒 Thêm vào giỏ hàng</button>
+
+      <button class="back-btn" onclick="window.location.href='products.html'">← Quay lại danh sách</button>
+    </div>
+  </div>
+
+<script>
+  const products = JSON.parse(localStorage.getItem("productsData")) || [];
+  const productId = localStorage.getItem("selectedProduct");
+  const product = products.find(p => p.id == productId);
+
+  const img = document.getElementById("product-img");
+  const name = document.getElementById("product-name");
+  const price = document.getElementById("product-price");
+  const category = document.getElementById("product-category");
+
+  let currentPrice = 0;
+  let priceM = 0;
+  let priceL = 0;
+
+  const sizeSection = document.querySelector(".options:nth-of-type(1)"); // phần kích cỡ M/L
+
+  if (product) {
+    img.src = product.img;
+    name.textContent = product.name;
+
+    category.textContent =
+      "Danh mục: " +
+      (product.category === "coffee"
+        ? "Cà phê"
+        : product.category === "tea"
+        ? "Trà trái cây"
+        : product.category === "milktea"
+        ? "Trà sữa"
+        : product.category === "matcha"
+        ? "Matcha & Cacao"
+        : product.category === "yogurt"
+        ? "Sữa chua"
+        : product.category === "smoothie"
+        ? "Sinh tố"
+        : product.category === "soda"
+        ? "Soda"
+        : "Topping");
+
+    // ✅ Nếu chỉ có 1 size
+    priceM = product.priceM;
+    priceL = product.priceL;
+    currentPrice = priceM;
+    price.textContent = currentPrice.toLocaleString() + "đ";
+
+    // Nếu 2 size giá giống nhau → ẩn lựa chọn size
+    if (priceM === priceL) {
+      sizeSection.style.display = "none";
+    }
+  }
+
+  // Khi chọn size (nếu có 2 size)
+  const sizeBtns = document.querySelectorAll(".options:nth-of-type(1) .option-btn");
+  sizeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      sizeBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const size = btn.dataset.size;
+
+      if (size === "M") {
+        currentPrice = priceM;
+      } else {
+        currentPrice = priceL;
+      }
+      price.textContent = currentPrice.toLocaleString() + "đ";
+    });
+  });
+
+  // Số lượng
+  const qtyInput = document.getElementById("qty");
+  document.getElementById("plus").onclick = () => (qtyInput.value = Number(qtyInput.value) + 1);
+  document.getElementById("minus").onclick = () => {
+    if (qtyInput.value > 1) qtyInput.value = Number(qtyInput.value) - 1;
+  };
+
+  // Thêm vào giỏ
+  document.getElementById("add-cart").addEventListener("click", () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const selectedSizeBtn = document.querySelector(".options:nth-of-type(1) .option-btn.active");
+    const selectedSize = selectedSizeBtn ? selectedSizeBtn.dataset.size : "Mặc định";
+
+    const item = {
+      id: product.id,
+      name: selectedSize === "Mặc định" ? product.name : `${product.name} (${selectedSize})`,
+      price: currentPrice,
+      qty: Number(qtyInput.value),
+    };
+
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showToast("✔️ Đã thêm sản phẩm vào giỏ hàng!", "success");
+  });
+
+// ============================
+// XỬ LÝ NÚT CHỌN ĐỘ NGỌT & ĐÁ
+// ============================
+
+// Kích hoạt chọn một nút duy nhất trong từng nhóm
+function setupOptionGroup(groupSelector) {
+  const options = document.querySelectorAll(groupSelector + " .option-btn");
+  options.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      options.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+}
+
+// Gọi cho từng nhóm
+setupOptionGroup(".sweetness-options"); // nhóm độ ngọt
+setupOptionGroup(".ice-options"); // nhóm đá
+
+// ============================
+// HIỂN THỊ TOAST THÔNG BÁO
+// ============================
+function showToast(message, type = "success") {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+
+  toast.className = "toast"; // reset class
+  toast.classList.add(type, "show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
+
+</script>
+
+<!-- Toast thông báo -->
+<div id="toast" class="toast">Đã thêm vào giỏ hàng!</div>
+
+</body>
+</html>

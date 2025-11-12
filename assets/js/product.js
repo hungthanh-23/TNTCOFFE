@@ -102,3 +102,10 @@ function addToCart(id) {
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 2200);
 }
+
+
+// Chuyển sang trang chi tiết sản phẩm
+function viewProduct(id) {
+  localStorage.setItem("selectedProduct", id);
+  window.location.href = "detail.html";
+}
