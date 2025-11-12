@@ -1,7 +1,6 @@
 /* ===========================
    PRODUCTS PAGE
 =========================== */
-
 .section-title {
   text-align: center;
   margin-top: 40px;
@@ -17,7 +16,7 @@
 }
 
 .section-title p {
-  color: #666;
+  color: #444; /* ✅ từ #666 -> #444 cho rõ hơn */
   font-size: 16px;
 }
 
@@ -33,7 +32,7 @@
   font-weight: 600;
   font-size: 18px;
   margin-right: 8px;
-  color: #333;
+  color: #222; /* ✅ rõ hơn */
 }
 
 .filter-box select {
@@ -42,7 +41,7 @@
   border: 2px solid #007b55;
   border-radius: 8px;
   background: #fff;
-  color: #333;
+  color: #222;
   transition: all 0.3s ease;
 }
 
@@ -55,100 +54,88 @@
    PRODUCT GRID
 =========================== */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
-  padding: 0 60px 60px;
+  padding: 30px 0;
+  background: #f8f9fa;
 }
 
-/* Card tổng thể */
 .product-card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  position: relative; /* ✅ cần cho .product-card::before hoạt động */
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  width: 230px;
+  text-align: center;
+  padding: 15px;
   transition: all 0.3s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Hình ảnh sản phẩm */
 .product-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
-.product-card:hover img {
-  transform: scale(1.08);
-}
-
-/* Nội dung thông tin */
+/* Tên sản phẩm rõ hơn */
 .product-card h3 {
-  font-size: 18px;
-  margin: 15px 15px 8px;
-  color: #333;
-  text-align: center;
+  font-size: 17px;
   font-weight: 600;
+  color: #111; /* ✅ từ #222 -> #111 cho tương phản hơn */
+  margin-bottom: 8px;
 }
 
+/* Giá tiền nổi bật */
 .product-card p {
-  text-align: center;
-  font-size: 16px;
   color: #007b55;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-/* Chi tiết phụ */
-.product-card .details {
-  text-align: center;
-  font-size: 13px;
-  color: #777;
+  font-weight: 700;
+  font-size: 15px;
   margin-bottom: 10px;
 }
 
-/* Nút thêm giỏ hàng */
+/* Nút thêm vào giỏ */
 .product-card button {
-  display: block;
-  width: 80%;
-  margin: 0 auto 16px;
-  background: linear-gradient(90deg, #007b55, #00a66b);
+  background: linear-gradient(90deg, #007b55, #00a06a);
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 8px;
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 14px;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.2s;
 }
 
 .product-card button:hover {
-  background: linear-gradient(90deg, #005f40, #009b60);
+  background: #005f40;
   transform: scale(1.05);
 }
 
-/* Tag thương hiệu */
+/* Thẻ "TNT Coffee" ở góc */
 .product-card::before {
   content: "TNT Coffee";
   position: absolute;
   top: 10px;
-  left: -40px;
+  left: -38px;
+  transform: rotate(-45deg);
   background: #007b55;
   color: #fff;
-  transform: rotate(-45deg);
-  width: 140px;
-  text-align: center;
   font-size: 12px;
-  padding: 4px 0;
+  font-weight: 600;
+  padding: 3px 40px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
 }
 
 /* ===========================
@@ -203,17 +190,25 @@
 
   .product-grid {
     padding: 0 20px 30px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .product-card {
+    width: 45%;
   }
 
   .product-card img {
-    height: 180px;
+    height: 170px;
   }
 }
 
 @media (max-width: 480px) {
   .product-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
   }
 
   .toast {

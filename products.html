@@ -47,7 +47,7 @@
     .product-card h3 {
       font-size: 18px;
       margin-bottom: 8px;
-      color: #333;
+      color: #000000;
     }
     .product-card p {
       color: #007b55;
@@ -111,21 +111,27 @@
 
   <!-- Bộ lọc và danh sách sản phẩm -->
   <section class="product-section">
-    <div class="filter-box">
-      <label for="category">Loại đồ uống:</label>
+    <div class="filter-section">
+  <div class="filter-container">
+    <h2>☕ Phân loại đồ uống</h2>
+    <p>Chọn nhóm sản phẩm bạn muốn xem:</p>
+    <div class="filter-select">
       <select id="category">
         <option value="all">Tất cả</option>
-        <option value="coffee">Cà phê</option>
-        <option value="tea">Trà</option>
-        <option value="milktea">Trà sữa</option>
-        <option value="juice">Nước ép</option>
-        <option value="matcha">Matcha & Cacao</option>
-        <option value="yogurt">Sữa chua</option>
-        <option value="smoothie">Sinh tố</option>
-        <option value="soda">Soda</option>
-        <option value="topping">Topping</option>
+        <option value="coffee">Cà phê ☕</option>
+        <option value="tea">Trà 🍃</option>
+        <option value="milktea">Trà sữa 🧋</option>
+        <option value="juice">Nước ép 🍊</option>
+        <option value="matcha">Matcha & Cacao 🍵</option>
+        <option value="yogurt">Sữa chua 🍶</option>
+        <option value="smoothie">Sinh tố 🥭</option>
+        <option value="soda">Soda 🫧</option>
+        <option value="topping">Topping 🍮</option>
       </select>
     </div>
+  </div>
+</div>
+
 
     <div class="product-grid" id="product-list"></div>
   </section>
@@ -228,9 +234,15 @@ localStorage.setItem("productsData", JSON.stringify(products));
         <img src="${p.img}" alt="${p.name}">
         <h3>${p.name}</h3>
         <p>${displayPrice}</p>
-        <button onclick="event.stopPropagation(); addToCart({id:${p.id}, name:'${p.name}', price:${p.priceM}});">
+        <button onclick="
+          event.stopPropagation();
+          addToCart({id:${p.id}, name:'${p.name}', price:${p.priceM}});
+          playTingSound();
+          showToast('✔️ Đã thêm ${p.name} vào giỏ hàng!', 'success');
+        ">
           🛒 Thêm vào giỏ
         </button>
+
       </div>
     `;
     productList.insertAdjacentHTML("beforeend", card);
@@ -271,7 +283,17 @@ function viewProduct(id) {
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
-    });
+    });    
+
+// ==============================
+// ÂM THANH "TING" KHI THÊM VÀO GIỎ
+// ==============================
+function playTingSound() {
+  const audio = new Audio("assets/sounds/success.mp3");
+  audio.volume = 0.4; // âm lượng vừa phải
+  audio.play().catch(err => console.log("Âm thanh chưa được phép phát:", err));
+}
+
 </script>
 
 </body>

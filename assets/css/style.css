@@ -933,4 +933,81 @@ body::before {
   background: #e66a00;
 }
 
+/* =======================================
+   PHẦN PHÂN LOẠI ĐỒ UỐNG - TNT COFFEE
+======================================= */
+.filter-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 40px;
+}
+
+.filter-container {
+  background: #ffffffdd;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 25px 40px;
+  max-width: 800px;
+  text-align: center;
+  border: 1.5px solid rgba(0, 123, 85, 0.2);
+  transition: all 0.3s ease;
+}
+
+.filter-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.filter-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #007b55;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.filter-container p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.filter-select select {
+  width: 240px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #007b55;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-select select:hover {
+  background: #007b55;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 123, 85, 0.4);
+}
+
+.filter-select select:focus {
+  outline: none;
+  border-color: #fdd835;
+  box-shadow: 0 0 10px rgba(253, 216, 53, 0.5);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .filter-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .filter-select select {
+    width: 100%;
+  }
+}
 
