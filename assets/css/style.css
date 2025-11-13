@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', 'Arial', sans-serif;
-  color: #eee;
+  color: #000000;
   background: url("../images/background.jpg") no-repeat center center fixed;
   background-size: cover;
   position: relative;
@@ -76,7 +76,7 @@ body::before {
   display: block;
   height: 2px;
   width: 0;
-  background: #fdd835;
+  background: #80606093;
   transition: width 0.3s;
   position: absolute;
   bottom: 0;
@@ -264,45 +264,105 @@ body::before {
   color: #ccc;
 }
 
-/* Liên hệ & Chính sách */
-.footer-contact,
-.footer-policy {
-  flex: 1;
-  min-width: 220px;
+/* 🌟 Cải tiến phần contact */
+.contact {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 60px auto;
+  max-width: 900px;
 }
 
-.footer-contact h4,
-.footer-policy h4 {
-  color: #fff;
+.contact h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #007b55;
+  margin-bottom: 20px;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
   font-size: 16px;
-  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-info a {
+  color: #007b55;
+  text-decoration: none;
   font-weight: 600;
 }
 
-.footer-contact p {
-  margin: 5px 0;
-  color: #ccc;
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fafafa;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #007b55;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #005f40;
+  transform: scale(1.05);
+}
+
+/* Phần text thông báo sau khi gửi */
+#formMsg {
   font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-top: 15px;
 }
 
-.footer-policy ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.footer-policy li {
-  margin-bottom: 6px;
-}
-
-.footer-policy a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-policy a:hover {
-  color: #ffb940;
+  .contact-info,
+  .contact-form {
+    width: 90%;
+  }
 }
 
 /* Dòng cuối footer */
@@ -1011,3 +1071,12 @@ body::before {
   }
 }
 
+
+/* Style for the user icon */
+.user-icon {
+  width: 30px;  /* Adjust size */
+  height: 30px;
+  border-radius: 50%;  /* Make it circular */
+  margin-left: 10px;  /* Space between links */
+  object-fit: cover;  /* Ensure it doesn't get stretched */
+}

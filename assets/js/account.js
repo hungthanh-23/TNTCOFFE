@@ -40,3 +40,30 @@ logForm.addEventListener("submit", e => {
     alert("Sai email hoặc mật khẩu!");
   }
 });
+
+
+document.getElementById("login-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-password").value;
+
+  // Kiểm tra thông tin đăng nhập (có thể kết hợp với API hoặc database)
+  if (email === "user@example.com" && password === "password123") {
+    localStorage.setItem("isLoggedIn", "true");  // Lưu thông tin đăng nhập
+    window.location.href = "products.html";  // Chuyển hướng tới trang sản phẩm sau khi đăng nhập thành công
+  } else {
+    alert("Thông tin đăng nhập sai!");
+  }
+});
+
+document.getElementById("register-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("reg-email").value;
+  const password = document.getElementById("reg-password").value;
+
+  // Lưu thông tin người dùng mới (có thể kết hợp với API hoặc database)
+  alert("Đăng ký thành công!");
+  window.location.href = "index.html";  // Chuyển hướng đến trang chủ sau khi đăng ký
+});

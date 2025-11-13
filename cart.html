@@ -9,15 +9,16 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="logo">TNT COFFEE</div>
-    <nav class="nav">
-      <a href="index.html">Trang chủ</a>
-      <a href="products.html">Sản phẩm</a>
-      <a href="cart.html" class="active">Giỏ hàng</a>
-      <a href="account.html">Tài khoản</a>
-      <a href="contact.html">Liên hệ</a>
-    </nav>
-  </header>
+  <div class="logo">TNT COFFEE</div>
+  <nav class="nav">
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
+    <a href="cart.html">Giỏ hàng</a>
+    <!-- User icon instead of "Tài khoản" -->
+    <a href="contact.html">Liên hệ</a>
+    <a href="account.html"><img src="assets/images/use.svg" alt="User Icon" class="user-icon" /></a>
+  </nav>
+</header>
 
   <!-- Giỏ hàng -->
   <section class="cart">
@@ -76,6 +77,8 @@
     </div>
   </div>
 
+
+  
   <!-- TỔNG KẾT -->
   <div class="total">
     <p><span>Tạm tính:</span><span id="subtotal">0đ</span></p>
@@ -97,7 +100,11 @@
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
+
+
 </script>
 
 </body>
 </html>
+
+
